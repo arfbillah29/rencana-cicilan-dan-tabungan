@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rencana Cicilan Tanah Ayep</title>
+<style>
+:root{--bg:#f3f1ea;--sf:#fff;--tx:#1f2a24;--mu:#5f6b63;--ln:#d9d6ca;--ac:#2f5d46;--on:#fff;--ac2:#e8efe9;--bad:#b3261e;--gold:#9a6b12;--gd:#f8efd9;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16201b;--sf:#1e2b24;--tx:#e9efe9;--mu:#9bab9f;--ln:#34443a;--ac:#7fc79e;--on:#10251a;--ac2:#243a2e;--bad:#ff8a80;--gold:#e5b95c;--gd:#3a3020;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#16201b;--sf:#1e2b24;--tx:#e9efe9;--mu:#9bab9f;--ln:#34443a;--ac:#7fc79e;--on:#10251a;--ac2:#243a2e;--bad:#ff8a80;--gold:#e5b95c;--gd:#3a3020;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 Georgia,"Times New Roman",serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--sf);z-index:10}
+.sans,input,button,table,nav{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--sf);border-bottom:1px solid var(--ln);position:sticky;top:env(safe-area-inset-top,0px);z-index:9}
+.top{max-width:980px;margin:0 auto;padding:12px 16px 0}
+.top h1{font-size:1.25rem;margin:0}
+.top p{margin:0;color:var(--mu);font-size:.85rem}
+nav{display:flex;gap:4px;overflow-x:auto;margin-top:8px}
+nav a{padding:9px 14px;color:var(--mu);text-decoration:none;font-size:14px;border-bottom:3px solid transparent;white-space:nowrap}
+nav a.on{color:var(--ac);border-color:var(--ac);font-weight:600}
+nav a:focus-visible{outline:2px solid var(--ac)}
+main{max-width:980px;margin:0 auto;padding:18px 16px 48px}
+section{display:none}
+section.on{display:block}
+h2{font-size:1.2rem;margin:0 0 10px}
+.sub{color:var(--mu);font-size:.9rem;margin:0 0 12px}
+.hero{background:var(--ac);color:var(--on);border-radius:6px;padding:20px}
+.hero b{font-size:clamp(2rem,8vw,3rem);display:block;line-height:1.1;margin:2px 0}
+.bar{height:10px;background:rgba(127,127,127,.35);border-radius:5px;margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--on);width:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:12px}
+.box{background:var(--sf);border:1px solid var(--ln);border-radius:4px;padding:12px}
+.box small{color:var(--mu);display:block}
+.box strong{font-size:1.15rem}
+label{display:block;font:13px system-ui,sans-serif;color:var(--mu)}
+input{width:100%;padding:8px;border:1px solid var(--ln);border-radius:4px;background:var(--sf);color:var(--tx);font-size:15px;margin-top:3px}
+input:focus,button:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+button{background:var(--ac);color:var(--on);border:0;border-radius:4px;padding:9px 14px;font-size:14px;cursor:pointer;font-weight:600}
+button.g{background:transparent;color:var(--ac);border:1px solid var(--ac)}
+.note{background:var(--gd);border-left:4px solid var(--gold);padding:10px 14px;border-radius:3px;margin-top:12px;font-size:.95rem}
+.scroll{overflow-x:auto;border:1px solid var(--ln);border-radius:4px;background:var(--sf)}
+table{border-collapse:collapse;width:100%;min-width:820px;font-size:14px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--ln);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{background:var(--ac2);font-weight:600}
+td input{width:105px;text-align:right;padding:5px}
+tr.pay td{background:var(--gd)}
+.neg{color:var(--bad);font-weight:700}
+.ok{color:var(--ac);font-weight:600}
+.chart{display:flex;align-items:flex-end;gap:6px;height:150px;margin-top:8px;padding:10px;background:var(--sf);border:1px solid var(--ln);border-radius:4px}
+.chart div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;font:11px system-ui,sans-serif;color:var(--mu)}
+.chart i{display:block;width:100%;background:var(--ac);border-radius:2px 2px 0 0;min-height:2px}
+.chart i.n{background:var(--bad)}
+ul{padding-left:20px}
+li{margin:5px 0}
+</style>
+</head>
+<body>
+<header>
+  <div class="top"><h1>Rencana tanah Ayep</h1><p class="sans">Tanah 13,40 × 12 m, Rp 85 juta</p>
+  <nav id="nav"><a href="#ringkasan">Ringkasan</a><a href="#roadmap">Roadmap</a><a href="#pengaturan">Pengaturan</a><a href="#panduan">Panduan</a></nav></div>
+</header>
+<main>
+<section id="ringkasan" class="on">
+  <div class="hero sans"><span>Total terkumpul setahun (proyeksi)</span><b id="hv"></b><span id="hs"></span><div class="bar"><i id="hb"></i></div></div>
+  <div id="sum" class="grid sans"></div>
+  <div id="msg"></div>
+  <h2 style="margin-top:22px">Saldo tiap bulan</h2>
+  <p class="sub">Batang merah artinya saldo minus di bulan itu.</p>
+  <div class="chart" id="ch"></div>
+</section>
+
+<section id="roadmap">
+  <h2>Roadmap dan catatan bulanan</h2>
+  <p class="sub">Isi Setoran nyata setelah menabung dan centang Bayar setelah membayar DP atau cicilan. Data tersimpan di browser ini.</p>
+  <div class="scroll"><table id="tb"></table></div>
+  <p><button class="g" id="rs">Hapus catatan nyata</button></p>
+</section>
+
+<section id="pengaturan">
+  <h2>Pengaturan</h2>
+  <p class="sub sans">Bulan ke-1 adalah <span id="m1"></span>. Pisahkan beberapa bulan dengan koma. Uang makan Rp 5,4 juta dianggap habis untuk bulanan dan tidak dihitung.</p>
+  <div class="grid">
+    <label>Gaji per bulan (juta)<input id="gaji" type="number" step="0.1"></label>
+    <label>Bonus tiap periode (juta)<input id="bonus" type="number" step="0.1"></label>
+    <label>Bulan cair bonus<input id="bm" type="text"></label>
+    <label>Harga tanah (juta)<input id="harga" type="number" step="0.5"></label>
+    <label>DP (juta)<input id="dp" type="number" step="0.5"></label>
+    <label>Bulan bayar DP<input id="dpm" type="number" min="1" max="12"></label>
+    <label>Jumlah cicilan setelah DP<input id="n" type="number" min="1" max="12"></label>
+    <label>Bulan bayar cicilan<input id="pm" type="text"></label>
+    <label>Biaya hidup dari gaji (juta/bln)<input id="hidup" type="number" step="0.1"></label>
+    <label>Setoran target biasa (juta/bln)<input id="setor" type="number" step="0.1"></label>
+    <label>Setoran di bulan DP (juta)<input id="dps" type="number" step="0.1"></label>
+    <label>Tabungan awal yang sudah ada (juta)<input id="awal" type="number" step="0.1"></label>
+  </div>
+</section>
+
+<section id="panduan">
+  <h2>Panduan</h2>
+  <ul>
+    <li><b>DP:</b> dibayar di bulan yang Anda tentukan, saat ini bulan ke-1 (November 2026) sebesar Rp 10 juta. Sisa harga dibagi rata menjadi cicilan.</li>
+    <li><b>Hari gajian:</b> langsung pindahkan setoran ke rekening terpisah khusus tanah.</li>
+    <li><b>Bulan bonus:</b> seluruh bonus masuk rekening tanah.</li>
+    <li><b>Sisa di akhir:</b> simpan untuk notaris, BPHTB, balik nama, dan dana darurat. Tanyakan nominal pasti ke notaris atau PPAT.</li>
+    <li><b>Sebelum tanda tangan:</b> pastikan sertifikat SHM, status tanah, dan denda keterlambatan tertulis di perjanjian.</li>
+  </ul>
+</section>
+</main>
+<script>
+var K="ayep-tanah-v2",D={gaji:10,bonus:21,bm:"6,12",harga:85,dp:10,dpm:1,n:5,pm:"5,7,9,11,12",hidup:5.5,setor:4.5,dps:10,awal:0,act:{},paid:{}},S;
+function load(){try{S=JSON.parse(localStorage.getItem(K))||{}}catch(e){S={}}S=Object.assign({},D,S)}
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+var ids=["gaji","bonus","bm","harga","dp","dpm","n","pm","hidup","setor","dps","awal"];
+var fm=function(x){return "Rp "+Math.round(x).toLocaleString("id-ID")};
+var jt=function(x){return (Math.round(x/1e5)/10).toLocaleString("id-ID")+" jt"};
+var list=function(s){return String(s).split(",").map(function(x){return parseInt(x)}).filter(function(x){return x>=1&&x<=12})};
+var BL=["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agu","Sep","Okt","Nov","Des"];
+function lbl(m){var d=new Date(2026,10+m-1,1);return BL[d.getMonth()]+" "+d.getFullYear()}
+function cic(){return Math.max(0,S.harga-S.dp)*1e6/Math.max(1,S.n)}
+function sim(setor,useAct){
+  var bm=list(S.bm),pm=list(S.pm),c1=cic(),bal=S.awal*1e6,rows=[],min=Infinity;
+  for(var m=1;m<=12;m++){
+    var tg=(m==S.dpm?S.dps:setor)*1e6;
+    var a=(useAct&&S.act[m]!==undefined&&S.act[m]!=="")?S.act[m]*1:tg;
+    var bn=bm.indexOf(m)>=0?S.bonus*1e6:0,k=pm.filter(function(x){return x==m}).length,c=c1*k,d=(m==S.dpm)?S.dp*1e6:0;
+    bal+=a+bn-c-d;min=Math.min(min,bal);
+    rows.push({m:m,tg:tg,a:a,bn:bn,c:c,d:d,bal:bal});
+  }
+  return {rows:rows,min:min};
+}
+function minSetor(){for(var s=0;s<=S.gaji;s+=0.05){if(sim(s,false).min>=-1)return Math.round(s*100)/100}return null}
+function render(){
+  var r=sim(S.setor,true),t=sim(S.setor,false),ms=minSetor();
+  var tot=r.rows.reduce(function(a,x){return a+x.a+x.bn},0)+S.awal*1e6,paid=0;
+  r.rows.forEach(function(x){if(S.paid[x.m])paid+=x.c+x.d});
+  var out=r.rows[11].bal,sisaGaji=S.gaji-S.setor;
+  document.getElementById("hv").textContent=fm(tot);
+  document.getElementById("hs").textContent="Sudah dibayar "+fm(paid)+" dari "+fm(S.harga*1e6);
+  document.getElementById("hb").style.width=Math.min(100,paid/(S.harga*1e6)*100)+"%";
+  var bx=[["DP bulan ke-"+S.dpm+" ("+lbl(S.dpm)+")",fm(S.dp*1e6),"dibayar dulu"],["Cicilan per kali",fm(cic()),S.n+" kali setelah DP"],["Pemasukan setahun",fm((S.gaji*12+S.bonus*list(S.bm).length)*1e6),"gaji + bonus"],["Setoran minimum",ms===null?"tidak cukup":fm(ms*1e6)+"/bln","agar saldo tak minus"],["Saldo terendah",fm(t.min),"proyeksi target"],["Sisa akhir tahun",fm(out),"setelah lunas"]];
+  document.getElementById("sum").innerHTML=bx.map(function(b){return '<div class="box"><small>'+b[0]+'</small><strong>'+b[1]+'</strong><small>'+b[2]+'</small></div>'}).join("");
+  var msg="";
+  if(t.min<-1)msg+='<div class="note sans">Dengan angka target ini saldo minus di salah satu bulan. Naikkan setoran, isi Tabungan awal, atau geser bulan bayar. Setoran minimum untuk bulan biasa: '+(ms===null?"di atas gaji":fm(ms*1e6))+'.</div>';
+  if(S.setor>S.gaji-S.hidup+0.001)msg+='<div class="note sans">Setoran biasa lebih besar dari sisa gaji setelah biaya hidup ('+jt((S.gaji-S.hidup)*1e6)+').</div>';
+  if(list(S.pm).length!=S.n)msg+='<div class="note sans">Jumlah bulan cicilan ('+list(S.pm).length+') tidak sama dengan jumlah cicilan ('+S.n+').</div>';
+  document.getElementById("msg").innerHTML=msg;
+  var mx=Math.max.apply(null,r.rows.map(function(x){return Math.abs(x.bal)}).concat([1]));
+  document.getElementById("ch").innerHTML=r.rows.map(function(x){return '<div><i class="'+(x.bal<0?"n":"")+'" style="height:'+Math.max(2,Math.abs(x.bal)/mx*100)+'%"></i>'+x.m+'</div>'}).join("");
+  var h="<tr><th>Bulan</th><th>Setoran target</th><th>Setoran nyata</th><th>Bonus</th><th>DP</th><th>Cicilan</th><th>Bayar</th><th>Saldo</th></tr>";
+  r.rows.forEach(function(x){
+    var v=S.act[x.m]!==undefined?S.act[x.m]:"",due=x.c+x.d>0;
+    h+='<tr class="'+(due?"pay":"")+'"><td>'+x.m+". "+lbl(x.m)+'</td><td>'+fm(x.tg)+'</td><td><input class="act" type="number" data-m="'+x.m+'" value="'+v+'" placeholder="isi"></td><td>'+(x.bn?fm(x.bn):"-")+'</td><td>'+(x.d?fm(x.d):"-")+'</td><td>'+(x.c?fm(x.c):"-")+'</td><td>'+(due?'<input type="checkbox" style="width:auto" data-p="'+x.m+'" '+(S.paid[x.m]?"checked":"")+'>':"")+'</td><td class="'+(x.bal<-1?"neg":"ok")+'">'+fm(x.bal)+'</td></tr>';
+  });
+  document.getElementById("tb").innerHTML=h;
+  document.querySelectorAll(".act").forEach(function(e){e.onchange=function(){S.act[e.dataset.m]=e.value;save();render()}});
+  document.querySelectorAll("[data-p]").forEach(function(e){e.onchange=function(){S.paid[e.dataset.p]=e.checked;save();render()}});
+}
+function show(){
+  var h=(location.hash||"#ringkasan").slice(1);
+  if(!document.getElementById(h))h="ringkasan";
+  document.querySelectorAll("section").forEach(function(s){s.classList.toggle("on",s.id==h)});
+  document.querySelectorAll("#nav a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")=="#"+h)});
+}
+load();
+document.getElementById("m1").textContent=lbl(1);
+ids.forEach(function(i){var e=document.getElementById(i);e.value=S[i];e.oninput=function(){S[i]=(i=="bm"||i=="pm")?e.value:(parseFloat(e.value)||0);if(i=="n")S.n=Math.max(1,S.n);if(i=="dpm")S.dpm=Math.min(12,Math.max(1,S.dpm));save();render()}});
+document.getElementById("rs").onclick=function(){S.act={};S.paid={};save();render()};
+window.addEventListener("hashchange",show);
+show();render();
+</script>
+</body>
+</html>

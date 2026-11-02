@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rencana Cicilan Tanah Ayep</title>
+<style>
+:root{--bg:#f3f1ea;--sf:#fff;--tx:#1f2a24;--mu:#5f6b63;--ln:#d9d6ca;--ac:#2f5d46;--ac2:#e8efe9;--bad:#b3261e;--bd:#fbe9e7;--gold:#9a6b12;--gd:#f8efd9;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16201b;--sf:#1e2b24;--tx:#e9efe9;--mu:#9bab9f;--ln:#34443a;--ac:#7fc79e;--ac2:#243a2e;--bad:#ff8a80;--bd:#3b2321;--gold:#e5b95c;--gd:#3a3020;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#16201b;--sf:#1e2b24;--tx:#e9efe9;--mu:#9bab9f;--ln:#34443a;--ac:#7fc79e;--ac2:#243a2e;--bad:#ff8a80;--bd:#3b2321;--gold:#e5b95c;--gd:#3a3020;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 Georgia,"Times New Roman",serif}
+main{max-width:980px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:clamp(1.7rem,5vw,2.5rem);line-height:1.15;margin:8px 0 4px;letter-spacing:-.01em}
+h2{font-size:1.15rem;margin:28px 0 10px}
+p.sub{color:var(--mu);margin:0 0 18px}
+.sans,input,button,table{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.hero{background:var(--ac);color:#fff;border-radius:6px;padding:22px 20px;margin:12px 0}
+:root[data-theme="dark"] .hero,:root:not([data-theme="light"]) .hero{}
+.hero b{font-size:clamp(2rem,8vw,3.2rem);display:block;line-height:1.1}
+.bar{height:10px;background:rgba(255,255,255,.28);border-radius:5px;margin-top:14px;overflow:hidden}
+.bar i{display:block;height:100%;background:#fff;width:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.box{background:var(--sf);border:1px solid var(--ln);border-radius:4px;padding:12px}
+.box small{color:var(--mu);display:block;font-family:system-ui,sans-serif}
+.box strong{font-size:1.2rem}
+label{display:block;font:13px system-ui,sans-serif;color:var(--mu)}
+input{width:100%;padding:8px;border:1px solid var(--ln);border-radius:4px;background:var(--sf);color:var(--tx);font-size:15px;margin-top:3px}
+input:focus,button:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+button{background:var(--ac);color:var(--bg);border:0;border-radius:4px;padding:9px 14px;font-size:14px;cursor:pointer;font-weight:600}
+button.g{background:transparent;color:var(--ac);border:1px solid var(--ac)}
+.note{background:var(--gd);color:var(--tx);border-left:4px solid var(--gold);padding:10px 14px;border-radius:3px;margin:12px 0;font-size:.95rem}
+.scroll{overflow-x:auto;border:1px solid var(--ln);border-radius:4px;background:var(--sf)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--ln);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{background:var(--ac2);font-weight:600}
+td input{width:110px;text-align:right;padding:5px}
+tr.pay td{background:var(--gd)}
+tr.bonus td:first-child{font-weight:700}
+.neg{color:var(--bad);font-weight:700}
+.ok{color:var(--ac);font-weight:600}
+ul{padding-left:20px;margin:6px 0}
+li{margin:4px 0}
+</style>
+</head>
+<body>
+<main>
+<h1>Rencana tanah Ayep</h1>
+<p class="sub">Tanah 13,40 × 12 m (±160,8 m²), Rp 85 juta, dicicil 5 kali dalam 12 bulan. Ubah angka di bawah, hasilnya langsung menyesuaikan.</p>
+
+<div class="hero sans">
+  <span id="hl">Terkumpul</span>
+  <b id="hv">Rp 0</b>
+  <span id="hs"></span>
+  <div class="bar"><i id="hb"></i></div>
+</div>
+
+<h2>Pengaturan</h2>
+<div class="grid">
+  <label>Gaji per bulan (juta)<input id="gaji" type="number" step="0.1"></label>
+  <label>Bonus tiap periode (juta)<input id="bonus" type="number" step="0.1"></label>
+  <label>Bulan cair bonus (ke-berapa)<input id="bm" type="text"></label>
+  <label>Harga tanah (juta)<input id="harga" type="number" step="0.5"></label>
+  <label>Jumlah cicilan<input id="n" type="number" min="1" max="12"></label>
+  <label>Bulan bayar cicilan<input id="pm" type="text"></label>
+  <label>Biaya hidup dari gaji (juta/bln)<input id="hidup" type="number" step="0.1"></label>
+  <label>Setoran tabungan target (juta/bln)<input id="setor" type="number" step="0.1"></label>
+</div>
+<p class="sub sans" style="font-size:13px;margin-top:8px">Uang makan Rp 5,4 juta dianggap habis untuk bulanan, jadi tidak dihitung sebagai tabungan. Bulan ke-1 = <span id="m1"></span>. Pisahkan beberapa bulan dengan koma.</p>
+
+<div id="sum" class="grid" style="margin-top:12px"></div>
+<div id="msg"></div>
+
+<h2>Roadmap dan catatan bulanan</h2>
+<p class="sub sans" style="font-size:14px">Isi kolom Setoran nyata tiap bulan setelah menabung, lalu centang Cicilan bayar saat sudah membayar. Data tersimpan di browser ini.</p>
+<div class="scroll"><table id="tb"></table></div>
+<p style="margin-top:12px"><button class="g" id="rs">Hapus catatan nyata</button></p>
+
+<h2>Cara membaginya</h2>
+<ul>
+<li><b>Hari gajian:</b> langsung pindahkan setoran target ke rekening terpisah khusus tanah. Jangan menunggu sisa.</li>
+<li><b>Bulan bonus:</b> seluruh bonus masuk rekening tanah, karena cicilan terbesar jatuh di bulan itu.</li>
+<li><b>Sisa di akhir:</b> simpan untuk biaya balik nama, notaris, BPHTB, dan dana darurat. Cek nominalnya ke notaris atau PPAT sebelum akad.</li>
+<li><b>Sebelum tanda tangan:</b> pastikan sertifikat (SHM), status tanah, dan denda keterlambatan tertulis di perjanjian.</li>
+</ul>
+</main>
+<script>
+var K="ayep-tanah-v1",D={gaji:10,bonus:21,bm:"6,12",harga:85,n:5,pm:"5,7,9,11,12",hidup:5.5,setor:4.5,act:{},paid:{}},S;
+function load(){try{S=JSON.parse(localStorage.getItem(K))||{}}catch(e){S={}}S=Object.assign({},D,S)}
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+var ids=["gaji","bonus","bm","harga","n","pm","hidup","setor"];
+var fm=function(x){return "Rp "+Math.round(x).toLocaleString("id-ID")};
+var jt=function(x){return (Math.round(x/1e5)/10).toLocaleString("id-ID")+" jt"};
+var list=function(s){return String(s).split(",").map(function(x){return parseInt(x)}).filter(function(x){return x>=1&&x<=12})};
+var BL=["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agu","Sep","Okt","Nov","Des"];
+function lbl(m){var d=new Date(2026,10+m-1,1);return BL[d.getMonth()]+" "+d.getFullYear()}
+function sim(setor,useAct){
+  var bm=list(S.bm),pm=list(S.pm),cic=S.harga*1e6/S.n,bal=0,rows=[],min=Infinity;
+  for(var m=1;m<=12;m++){
+    var a=(useAct&&S.act[m]!==undefined&&S.act[m]!=="")?S.act[m]*1:setor*1e6;
+    var bn=bm.indexOf(m)>=0?S.bonus*1e6:0,c=pm.indexOf(m)>=0?cic*pm.filter(function(x){return x==m}).length:0;
+    bal+=a+bn-c;min=Math.min(min,bal);
+    rows.push({m:m,a:a,bn:bn,c:c,bal:bal});
+  }
+  return {rows:rows,min:min};
+}
+function minSetor(){for(var s=0;s<=S.gaji;s+=0.05){if(sim(s,false).min>=-1)return Math.round(s*100)/100}return null}
+function render(){
+  var r=sim(S.setor,true),t=sim(S.setor,false),ms=minSetor();
+  var tot=r.rows.reduce(function(a,x){return a+x.a+x.bn},0),paid=0;
+  r.rows.forEach(function(x){if(S.paid[x.m]&&x.c)paid+=x.c});
+  var ann=S.gaji*12+S.bonus*list(S.bm).length;
+  var sisaGaji=S.gaji-S.hidup;
+  var out=r.rows[11].bal;
+  document.getElementById("hl").textContent="Total terkumpul setahun (proyeksi)";
+  document.getElementById("hv").textContent=fm(tot);
+  document.getElementById("hs").textContent="Tanah "+fm(S.harga*1e6)+", sudah dibayar "+fm(paid);
+  document.getElementById("hb").style.width=Math.min(100,paid/(S.harga*1e6)*100)+"%";
+  var bx=[["Pemasukan setahun",fm(ann*1e6),"gaji + bonus"],["Cicilan per kali",fm(S.harga*1e6/S.n),S.n+" kali"],["Setoran minimum",ms===null?"tidak cukup":fm(ms*1e6)+"/bln","agar saldo tak minus"],["Setoran target",fm(S.setor*1e6)+"/bln",Math.round(S.setor/S.gaji*100)+"% dari gaji"],["Sisa gaji untuk hidup",fm(sisaGaji*1e6)+"/bln","gaji dikurangi setoran"],["Sisa akhir tahun",fm(out),"setelah lunas"]];
+  document.getElementById("sum").innerHTML=bx.map(function(b){return '<div class="box"><small>'+b[0]+'</small><strong>'+b[1]+'</strong><small>'+b[2]+'</small></div>'}).join("");
+  var msg="";
+  if(t.min<-1)msg+='<div class="note">Dengan setoran target ini saldo sempat minus di salah satu bulan cicilan. Naikkan setoran atau geser bulan bayar cicilan. Setoran minimum: '+(ms===null?"di atas gaji":fm(ms*1e6)+" per bulan")+'.</div>';
+  if(S.setor>S.gaji-S.hidup+0.001)msg+='<div class="note">Setoran target lebih besar dari sisa gaji setelah biaya hidup ('+jt(sisaGaji*1e6)+'). Turunkan biaya hidup atau setoran.</div>';
+  if(out<-1)msg+='<div class="note">Tanah belum lunas dalam 12 bulan dengan angka ini.</div>';
+  document.getElementById("msg").innerHTML=msg;
+  var h="<tr><th>Bulan</th><th>Setoran target</th><th>Setoran nyata</th><th>Bonus</th><th>Cicilan</th><th>Bayar</th><th>Saldo</th></tr>";
+  r.rows.forEach(function(x){
+    var v=S.act[x.m]!==undefined?S.act[x.m]:"";
+    h+='<tr class="'+(x.c?"pay ":"")+(x.bn?"bonus":"")+'"><td>'+x.m+". "+lbl(x.m)+'</td><td>'+fm(S.setor*1e6)+'</td><td><input type="number" data-m="'+x.m+'" value="'+v+'" placeholder="isi" class="act"></td><td>'+(x.bn?fm(x.bn):"-")+'</td><td>'+(x.c?fm(x.c):"-")+'</td><td>'+(x.c?'<input type="checkbox" style="width:auto" data-p="'+x.m+'" '+(S.paid[x.m]?"checked":"")+'>':"")+'</td><td class="'+(x.bal<-1?"neg":"ok")+'">'+fm(x.bal)+'</td></tr>';
+  });
+  document.getElementById("tb").innerHTML=h;
+  document.querySelectorAll(".act").forEach(function(e){e.onchange=function(){S.act[e.dataset.m]=e.value;save();render()}});
+  document.querySelectorAll("[data-p]").forEach(function(e){e.onchange=function(){S.paid[e.dataset.p]=e.checked;save();render()}});
+}
+load();
+document.getElementById("m1").textContent=lbl(1);
+ids.forEach(function(i){var e=document.getElementById(i);e.value=S[i];e.oninput=function(){S[i]=(i=="bm"||i=="pm")?e.value:(parseFloat(e.value)||0);if(i=="n")S.n=Math.max(1,S.n);save();render()}});
+document.getElementById("rs").onclick=function(){S.act={};S.paid={};save();render()};
+render();
+</script>
+</body>
+</html>
